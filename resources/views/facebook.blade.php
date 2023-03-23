@@ -27,6 +27,7 @@
                                 </div>
                                 <div class="well">
                                     <form action="{{route('store.post')}}" class="form_submission" method="post">
+                                        @csrf
                                         <h4>New Post</h4>
                                         <div class="form-group" style="padding:14px;">
                                             <textarea class="form-control" placeholder="Update your status"
@@ -40,7 +41,7 @@
                                             <input type="hidden" name="longitude" value="">
                                             <input type="hidden" name="latitude" value="">
                                         </div>
-                                        <button class="btn btn-primary pull-right" type="button">Post</button>
+                                        <button class="btn btn-primary pull-right" type="submit">Post</button>
                                         <ul class="list-inline">
                                             <li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
                                         </ul>
@@ -58,8 +59,8 @@
                                         </div>
                                         <div class="panel-body">
                                             <p class="lead" style="text-transform: uppercase;">{{$post->content}}</p>
-                                            <b><a style="color: green; text-transform: uppercase;">{{$post->cloths}}</a> &
-                                            <a style="color: green; text-transform: uppercase;">{{$post->food}}</a></b>
+                                            <b><a style="color: green; text-transform: uppercase;">{{$post->cloths}}</a><br>
+                                                <a style="color: green; text-transform: uppercase;">{{$post->food}}</a></b>
                                             {{--                                        <form action="{{route('store.commence')}}" method="post"--}}
                                             {{--                                              class="commence_submission">--}}
                                             {{--                                            <div class="input-group">--}}
