@@ -54,7 +54,7 @@
                                     <div class="panel panel-default">
                                         <div class="panel-thumbnail">
                                             <iframe
-                                                src="https://maps.google.com/maps?q={{$post->longitude}},{{$post->latitude}}&amp;z=15&amp;output=embed"
+                                                src="https://maps.google.com/maps?q={{$post->latitude}},{{$post->longitude}}&amp;z=15&amp;output=embed"
                                                 width="100%" height="300px"></iframe>
                                         </div>
                                         <div class="panel-body">
