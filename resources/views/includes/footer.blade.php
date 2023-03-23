@@ -13,7 +13,6 @@
     });
 
     $(document).on('submit', '.form_submission', function (e) {
-        alert();
         e.preventDefault();
         let this_ = $(this);
         let action = this_.attr('action');
