@@ -21,7 +21,7 @@
                                         <p>45 Followers, 13 Posts</p>
                                         <p>
                                             <img src="assets/img/uFp_tsTJboUY7kue5XAsGAs28.png" height="28px"
-                                                 width="28px">
+                                                 width="100%">
                                         </p>
                                     </div>
                                 </div>
