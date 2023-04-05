@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('facebook');
-});
+//Route::get('/', function () {
+//    return view('facebook');
+//});
 
 Route::get('/location', function () {
     return view('location');

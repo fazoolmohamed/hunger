@@ -1,6 +1,7 @@
 <script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/bootstrap.js')}}"></script>
 <script type="text/javascript">
+
     $(document).ready(function () {
         $('[data-toggle=offcanvas]').click(function () {
             $(this).toggleClass('visible-xs text-center');
@@ -32,6 +33,7 @@
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
+
         } else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
@@ -41,15 +43,6 @@
         latitude.val(position.coords.latitude);
         longitude.val(position.coords.longitude);
     }
-
-    // $(document).on('submit', '.commence_submission', function (e) {
-    //     e.preventDefault();
-    //     let action = $(this).attr('action');
-    //     let value = $(this).val();
-    //     $.post(action, {_token: _token, value: value}, function (res) {
-    //
-    //     })
-    // });
 </script>
 </body>
 </html>

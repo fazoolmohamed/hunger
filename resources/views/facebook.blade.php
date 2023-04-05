@@ -8,13 +8,14 @@
             @include('includes/navigation')
             <!-- /top nav -->
                 <div class="padding">
-                    <div class="full col-sm-9">
+                    <div class="full col-md-12">
                         <!-- content -->
                         <div class="row">
                             <!-- main col left -->
-                            <div class="col-sm-5">
+                            <div class="col-md-5">
                                 <div class="panel panel-default">
-                                    <div class="panel-thumbnail"><img src="assets/img/bg_5.jpg" width="100%" class="img-responsive">
+                                    <div class="panel-thumbnail"><img src="assets/img/bg_5.jpg" width="100%"
+                                                                      class="img-responsive">
                                     </div>
                                     <div class="panel-body">
                                         <p class="lead">Hunger</p>
@@ -32,12 +33,6 @@
                                         <div class="form-group" style="padding:14px;">
                                             <textarea class="form-control" placeholder="Update your status"
                                                       name="content"></textarea>
-                                            <input type="checkbox" class="new_post_checkbox" name="cloths"
-                                                   value="cloths"><label
-                                                for="scales">Cloths</label>
-                                            <br>
-                                            <input type="checkbox" class="new_post_checkbox" name="foods" value="foods"><label
-                                                for="scales">Foods</label>
                                             <input type="hidden" name="longitude" value="">
                                             <input type="hidden" name="latitude" value="">
                                         </div>
@@ -50,28 +45,46 @@
                             </div>
                             <!-- main col right -->
                             @foreach($posts as $post)
-                                <div class="col-sm-7">
+                                <div style="float: right" class="col-md-7">
                                     <div class="panel panel-default">
                                         <div class="panel-thumbnail">
                                             <iframe
                                                 src="https://maps.google.com/maps?q={{$post->latitude}},{{$post->longitude}}&amp;z=15&amp;output=embed"
                                                 width="100%" height="300px"></iframe>
                                         </div>
+                                        <div class="panel-body"><p class="lead"
+                                                                   style="text-transform: uppercase;">{{$post->content}}</p>
+                                        </div>
                                         <div class="panel-body">
-                                            <p class="lead" style="text-transform: uppercase;">{{$post->content}}</p>
-                                            <b><a style="color: green; text-transform: uppercase;">{{$post->cloths}}</a><br>
-                                                <a style="color: green; text-transform: uppercase;">{{$post->food}}</a></b>
-                                            {{--                                        <form action="{{route('store.commence')}}" method="post"--}}
-                                            {{--                                              class="commence_submission">--}}
-                                            {{--                                            <div class="input-group">--}}
-                                            {{--                                                <div class="input-group-btn">--}}
-                                            {{--                                                    <button type="submit" class="btn btn-default"><i--}}
-                                            {{--                                                            class="glyphicon glyphicon-share"></i></button>--}}
-                                            {{--                                                    <input type="submit" hidden>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                                <input class="form-control" placeholder="Add a comment.." type="text">--}}
-                                            {{--                                            </div>--}}
-                                            {{--                                        </form>--}}
+
+                                            <div class="container-fluid">
+                                                <div class="row" style="border: 1px solid #555555; margin: 0 80px;padding: 20px 0; border-radius: 5px">
+                                                    <div class="col-md-4">
+                                                        <div style="text-align: center">
+                                                            <div class="card-body">
+                                                                <input type="checkbox" name="cloths"
+                                                                       style="width:6rem;height: 6rem;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="text-align: center">
+                                                            <div class="card-body">
+                                                                <input type="checkbox" name="cloths"
+                                                                       style="width:6rem;height: 6rem;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="text-align: center">
+                                                            <div class="card-body">
+                                                                <input type="checkbox" name="cloths"
+                                                                       style="width:6rem;height: 6rem;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -116,15 +129,6 @@
                     </div>
                 </div>
                 <div>
-                    <div class="modal-footer-more">
-                        <input type="checkbox" value="cloths" name="cloths" class="new_post_checkbox">
-                        <label>Cloths</label>
-                        <br>
-                        <input type="checkbox" value="foods" name="food" class="new_post_checkbox">
-                        <label>Food</label>
-                        <input type="hidden" name="longitude" value="">
-                        <input type="hidden" name="latitude" value="">
-                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                             Post
