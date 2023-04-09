@@ -43,6 +43,24 @@
         latitude.val(position.coords.latitude);
         longitude.val(position.coords.longitude);
     }
+
+    $(document).on('click', '.checkbox_selection', function () {
+
+        let _this = $(this);
+        _this.closest('.container-fluid').find('.card-body').find('input[type="checkbox"]').attr('disabled', 'disabled');
+        _this.attr('disabled', false);
+        let action = "{{route('suggestion.box')}}";
+        let post_id = _this.attr('data-post-id');
+        let user_id = 1;
+        {{--        let user_id = "{{Auth::user()->id}}";--}}
+        if (_this.is(':checked')) {
+            _this.closest('.container-fluid').find('.card-body').find('input[type="checkbox"]').attr('disabled', 'disabled');
+            _this.attr('disabled', false);
+            $.post(action, {_token: _token, item: _this.val(), post_id: post_id, user_id: user_id});
+        } else {
+            _this.closest('.container-fluid').find('.card-body').find('input[type="checkbox"]').attr('disabled', false);
+        }
+    });
 </script>
 </body>
 </html>

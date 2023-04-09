@@ -58,31 +58,27 @@
                                         <div class="panel-body">
 
                                             <div class="container-fluid">
-                                                <div class="row" style="border: 1px solid #555555; margin: 0 80px;padding: 20px 0; border-radius: 5px">
-                                                    <div class="col-md-4">
-                                                        <div style="text-align: center">
-                                                            <div class="card-body">
-                                                                <input type="checkbox" name="cloths"
-                                                                       style="width:6rem;height: 6rem;">
+                                                <div class="row"
+                                                     style="border: 1px solid #555555; margin: 0 80px;padding: 20px 0; border-radius: 5px">
+                                                    @php
+                                                        $arrays = [$post->item1 => 'item1', $post->item2 => 'item2', $post->item3 => 'item3'];
+                                                        uksort($arrays, 'strcasecmp');
+                                                    @endphp
+                                                    @foreach($arrays as $key => $array)
+                                                        <div class="col-md-4">
+                                                            <div style="text-align: center">
+                                                                <div class="card-body">
+                                                                    <input type="checkbox" class="checkbox_selection"
+                                                                           data-post-id="{{$post->id}}"
+                                                                           name="{{$array}}"
+                                                                           value="{{$array}}"
+                                                                           {{$key != 0 ? 'checked' : ''}}
+                                                                           {{$key != 0 ? 'disabled' : ''}}
+                                                                           style="width:6rem;height: 6rem;{{$key != 0 ? 'accent-color: green;' : ''}}">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div style="text-align: center">
-                                                            <div class="card-body">
-                                                                <input type="checkbox" name="cloths"
-                                                                       style="width:6rem;height: 6rem;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div style="text-align: center">
-                                                            <div class="card-body">
-                                                                <input type="checkbox" name="cloths"
-                                                                       style="width:6rem;height: 6rem;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>

@@ -31,3 +31,5 @@ Route::post('/store-post', [App\Http\Controllers\PostController::class, 'store']
 #Commence Controller
 Route::post('/store-commence', [App\Http\Controllers\CommenceController::class, 'store'])->name('store.commence');
 
+Route::post('suggestion', [\App\Http\Controllers\SuggestionController::class, 'update'])->name('suggestion.box');
+

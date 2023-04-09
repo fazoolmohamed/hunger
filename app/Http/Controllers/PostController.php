@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Suggestion;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,6 +13,7 @@ class PostController extends Controller
         $post = new Post();
         $post->loadFromRequest($request);
         $post->save();
+        $this->createSuggestion($post->id);
         return Post::returnResult();
     }
 
@@ -20,8 +22,10 @@ class PostController extends Controller
         return Post::findById($id);
     }
 
-    public function update($id, Request $request)
+    public function createSuggestion($id)
     {
-
+        $suggestion = new Suggestion();
+        $suggestion->post_id = $id;
+        $suggestion->save();
     }
 }
