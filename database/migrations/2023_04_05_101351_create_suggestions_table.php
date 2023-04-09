@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->string('post_id');
             $table->string('item1')->default(0);
             $table->string('item2')->default(0);
-            $table->decimal('item3', 8, 2)->default(0);
+            $table->string('item3')->default(0);
             $table->timestamps();
         });
     }
