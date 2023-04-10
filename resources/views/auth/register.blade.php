@@ -20,7 +20,7 @@
                             <div class="form-outline mb-4">
                                 <input type="name" id="typeEmailX-2"
                                        class="form-control form-control text-center form-control @error('name') is-invalid @enderror"
-                                       placeholder="name" autocomplete="off" name="name"/>
+                                       placeholder="Name" autocomplete="off" name="name"/>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
