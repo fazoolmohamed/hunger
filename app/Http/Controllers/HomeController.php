@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -28,29 +28,9 @@ class HomeController extends Controller
     {
         $posts = DB::table('posts')
             ->join('suggestions', 'posts.id', '=', 'suggestions.post_id')
-            ->select('posts.*', 'suggestions.*')
+            ->join('users', 'users.id', '=', 'posts.user_id')
+            ->select('posts.*', 'suggestions.*','users.*')
             ->get();
-
-print_r($posts);die;
         return view('facebook')->with(['posts' => $posts]);
-    }
-
-    public function post()
-    {
-        $posts = DB::table('posts')->get()->toArray();
-        $item = DB::table('suggestions')->get()->toArray();
-
-
-        foreach ($array as $key => $value) {
-            echo $key . ' - ' . $value . '<br>';
-        }
-        die;
-
-        foreach ($posts as &$post) {
-            $post->item = array_filter($item, function ($item) use ($post) {
-                return $item->post_id == $post->id;
-            });
-        }
-        return $posts;
     }
 }

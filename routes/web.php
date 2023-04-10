@@ -13,16 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('facebook');
-//});
-
-Route::get('/location', function () {
-    return view('location');
-});
-
 Auth::routes();
-
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -32,4 +23,3 @@ Route::post('/store-post', [App\Http\Controllers\PostController::class, 'store']
 Route::post('/store-commence', [App\Http\Controllers\CommenceController::class, 'store'])->name('store.commence');
 
 Route::post('suggestion', [\App\Http\Controllers\SuggestionController::class, 'update'])->name('suggestion.box');
-

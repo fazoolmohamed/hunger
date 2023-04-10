@@ -10,19 +10,17 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-4">
                 <div class="card shadow-2-strong">
-
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="card-body p-5 text-center pt-3 pb-3" style="padding:0 10px">
+                        <div class="card-body p-5 text-center pt-3 pb-3">
 
                             <p style="font-size: 50px"><i class="fa fa-user"></i></p>
-                            <h3 class="mb-5">USER REGISTER</h3>
+                            <h3 class="mb-5">REGISTER LOGIN</h3>
 
                             <div class="form-outline mb-4">
-                                <input type="text" id="typeEmailX-2"
-                                       class="form-control form-control text-center @error('name') is-invalid @enderror"
-                                       name="name"
-                                       placeholder="Name" autocomplete="off"/>
+                                <input type="name" id="typeEmailX-2"
+                                       class="form-control form-control text-center form-control @error('name') is-invalid @enderror"
+                                       placeholder="name" autocomplete="off" name="name"/>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -33,7 +31,7 @@
 
                             <div class="form-outline mb-4">
                                 <input type="email" id="typeEmailX-2"
-                                       class="form-control form-control text-center @error('email') is-invalid @enderror"
+                                       class="form-control form-control text-center form-control @error('email') is-invalid @enderror"
                                        placeholder="Email" autocomplete="off" name="email"/>
 
                                 @error('email')
@@ -45,9 +43,8 @@
 
                             <div class="form-outline mb-4">
                                 <input type="password" id="typePasswordX-2"
-                                       class="form-control form-control text-center  @error('password') is-invalid @enderror"
-                                       name="password" required
-                                       placeholder="Password"/>
+                                       class="form-control form-control text-center @error('password') is-invalid @enderror"
+                                       placeholder="Password" name="password"/>
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -58,16 +55,17 @@
 
                             <div class="form-outline mb-4">
                                 <input type="password" id="typePasswordX-2"
-                                       class="form-control form-control text-center  @error('password') is-invalid @enderror"
-                                       name="password_confirmation" required
-                                       placeholder="Confirm Password"/>
+                                       class="form-control form-control text-center"
+                                       placeholder="Password Confirmation" name="password_confirmation"/>
                             </div>
 
-                            <button class="btn btn-outline-primary btn-block" style="width: 100%" type="submit">Submit
+                            <button class="btn btn-outline-primary btn-block" style="width: 100%" type="submit">Login
                             </button>
 
+
                             <div class="form-check d-flex justify-content-start mt-2">
-                                <label class="form-check-label" for="form1Example3">Already have account <a href="">Login?</a></label>
+                                <label class="form-check-label" for="form1Example3">Dont have a account <a
+                                        href="{{route('register')}}">Register!</a></label>
                             </div>
                         </div>
                     </form>

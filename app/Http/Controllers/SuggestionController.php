@@ -12,21 +12,24 @@ class SuggestionController extends Controller
     {
 
         $suggestion = Suggestion::findById($request->post_id);
-
+        $user_ids = json_decode($suggestion->user_id);
         $arrays = ['item1' => $suggestion->item1, 'item2' => $suggestion->item2, 'item3' => $suggestion->item3];
         $num = 1;
-        foreach ($arrays as $key => $array) {
+        foreach ($arrays as $array) {
             if ($num != $array) {
                 $arrays[$request->item] += $num;
             }
         }
         $request->merge($arrays);
-        $suggestion = new Suggestion();
-        $suggestionNotEmpty = $suggestion::findById($request->post_id);
-        if ($suggestionNotEmpty == true) {
-            $suggestion->findById($request->post_id);
+        $arr = [];
+        foreach ($user_ids as $key => $value) {
+            $arr += [$key => $value];
+            $arr += [$request->item => $request->user_id];
         }
-        $suggestion->loadFromArray($request);
+        $suggestion->user_id = json_encode($arr);
+        $suggestion->item1 = $request->item1;
+        $suggestion->item2 = $request->item2;
+        $suggestion->item3 = $request->item3;
         $suggestion->save();
     }
 }

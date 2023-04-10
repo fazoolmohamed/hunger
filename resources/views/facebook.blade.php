@@ -36,6 +36,7 @@
                                             <input type="hidden" name="longitude" value="">
                                             <input type="hidden" name="latitude" value="">
                                         </div>
+                                        <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
                                         <button class="btn btn-primary pull-right" type="submit">Post</button>
                                         <ul class="list-inline">
                                             <li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
@@ -61,10 +62,14 @@
                                                 <div class="row"
                                                      style="border: 1px solid #555555; margin: 0 80px;padding: 20px 0; border-radius: 5px">
                                                     @php
-                                                        $arrays = [$post->item1 => 'item1', $post->item2 => 'item2', $post->item3 => 'item3'];
+                                                        $arrays = [$post->item1.'1' => 'item1', $post->item2.'2' => 'item2', $post->item3.'3' => 'item3'];
+
                                                         uksort($arrays, 'strcasecmp');
                                                     @endphp
                                                     @foreach($arrays as $key => $array)
+                                                        @php
+                                                            $key = explode('0',$key);
+                                                        @endphp
                                                         <div class="col-md-4">
                                                             <div style="text-align: center">
                                                                 <div class="card-body">
@@ -72,9 +77,10 @@
                                                                            data-post-id="{{$post->id}}"
                                                                            name="{{$array}}"
                                                                            value="{{$array}}"
-                                                                           {{$key != 0 ? 'checked' : ''}}
-                                                                           {{$key != 0 ? 'disabled' : ''}}
-                                                                           style="width:6rem;height: 6rem;{{$key != 0 ? 'accent-color: green;' : ''}}">
+                                                                           {{$key[0] != '' ? 'checked' : ''}}
+                                                                           @guest{{$key[0] != '' ? 'disabled' : ''}}@endguest
+                                                                           style="width:6rem;height: 6rem;{{$key[0] != '' ? 'accent-color: green;' : ''}}">
+                                                                    <p><b>fasdf</b></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -126,6 +132,7 @@
                 </div>
                 <div>
                     <div class="modal-footer">
+                        <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
                         <button type="submit" class="btn btn-primary btn-sm">
                             Post
                         </button>

@@ -14,6 +14,7 @@ return new class extends Migration {
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id')->nullable();
             $table->string('content')->nullable();
             $table->string('food')->nullable();
             $table->string('cloths')->nullable();

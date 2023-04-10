@@ -18,7 +18,7 @@
         let this_ = $(this);
         let action = this_.attr('action');
         $.post(action, this_.serialize(), function (res) {
-
+            reload();
         });
     });
 

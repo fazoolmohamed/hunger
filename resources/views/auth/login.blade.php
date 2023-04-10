@@ -46,7 +46,8 @@
 
 
                             <div class="form-check d-flex justify-content-start mt-2">
-                                <label class="form-check-label" for="form1Example3">Dont have a account <a href="">Register!</a></label>
+                                <label class="form-check-label" for="form1Example3">Dont have a account <a
+                                        href="{{route('register')}}">Register!</a></label>
                             </div>
                         </div>
                     </form>
