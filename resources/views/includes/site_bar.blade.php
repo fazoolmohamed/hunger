@@ -1,30 +1,36 @@
-<div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+<div class="col-lg-3 tr-sidebar tr-sticky">
+    <div class="theiaStickySidebar">
+        <div class="tr-menu sidebar-menu">
+            <nav class="navbar navbar-default navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
+                </button>
+                <a class="navbar-brand" href="index-2.html"><img class="img-fluid"
+                                                                 src="{{asset('assets/images/logo.png')}}"
+                                                                 alt="Logo"></a>
 
-    <ul class="nav">
-        <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i
-                    class="glyphicon glyphicon-chevron-right"></i></a></li>
-    </ul>
+                <span class="discover">Options</span>
 
-    <ul class="nav hidden-xs" id="lg-menu">
-        <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a>
-        </li>
-        <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> Stories</a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
-    </ul>
-    <ul class="list-unstyled hidden-xs" id="sidebar-footer">
-        <li>
-            <a href="http://usebootstrap.com/theme/facebook"><h3>Bootstrap</h3> <i
-                    class="glyphicon glyphicon-heart-empty"></i> Bootply</a>
-        </li>
-    </ul>
-
-    <!-- tiny only nav-->
-    <ul class="nav visible-xs" id="xs-menu">
-        <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
-        <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
-        <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
-        <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
-    </ul>
-
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a href="{{route('home')}}"><i class="fa fa-info-circle"
+                                                                                   aria-hidden="true"></i>Home</a></li>
+                        <li class="dropdown"><a data-toggle="dropdown" href="{{route('create.user')}}"><i
+                                    class="fa fa-plus-circle" aria-hidden="true"></i>Create User</a>
+                        </li>
+                        <li><a href="{{route('edit.user')}}"><i class="fa-google-wallet"
+                                                                aria-hidden="true"></i>Edit
+                                User</a>
+                        </li>
+                        <li><a href="{{route('details.post')}}"><i class="fa fa-compass"
+                                                                   aria-hidden="true"></i> Post</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-futbol-o"
+                                                     aria-hidden="true"></i>Add Optional Items</a></li>
+                    </ul>
+                </div>
+            </nav><!-- /navbar -->
+        </div><!-- /left-memu -->
+    </div><!-- /.theiaStickySidebar -->
 </div>

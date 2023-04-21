@@ -15,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+//Route::get('theme', function () {
+//    return view('theme1');
+//});
+
+Route::get('create-user', function () {
+    return view('create_register');
+})->name('create.user');
+
+Route::get('edit-user', function () {
+    return view('edit_user');
+})->name('edit.user');
+
+Route::get('delete-user', function () {
+    return view('delete_user');
+})->name('delete.user');
+
+Route::get('detail-post', function () {
+    return view('post');
+})->name('details.post');
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/store-post', [App\Http\Controllers\PostController::class, 'store'])->name('store.post');

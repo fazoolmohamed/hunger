@@ -29,8 +29,10 @@ class HomeController extends Controller
         $posts = DB::table('posts')
             ->join('suggestions', 'posts.id', '=', 'suggestions.post_id')
             ->join('users', 'users.id', '=', 'posts.user_id')
-            ->select('posts.*', 'suggestions.*','users.*')
+            ->select('posts.*', 'suggestions.*', 'users.*')
             ->get();
-        return view('facebook')->with(['posts' => $posts]);
+
+//        return view('facebook')->with(['posts' => $posts]);
+        return view('theme1')->with(['posts' => $posts]);
     }
 }
