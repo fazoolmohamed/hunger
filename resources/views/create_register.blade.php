@@ -114,17 +114,51 @@
                 <div class="tr-home-slider home-slider-1 tr-section">
                     <div>
                         <div class="logo text-center">
-                            <a class="navbar-brand" href="index-2.html"><img class="img-fluid" src="{{asset('assets/images/logo.png')}}" alt="Logo"></a>
+                            <a class="navbar-brand" href="index-2.html"><img class="img-fluid"
+                                                                             src="{{asset('assets/images/logo.png')}}"
+                                                                             alt="Logo"></a>
                         </div>
-                        <form class="contact-form" name="contact-form" method="post" action="#">
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" required="required" placeholder="Full Name">
-                                <input type="text" class="form-control" required="required" placeholder="User NAme">
-                                <input type="email" class="form-control" required="required" placeholder="Email Id">
-                                <input type="password" class="form-control" required="required" placeholder="Password">
-                                <input type="password" class="form-control" required="required" placeholder="Re type - Password">
-                                <button type="submit" class="btn btn-primary">Register</button>
+
+                                <input type="text" class="form-control" required="required" name="name" placeholder="User Name">
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
+                            <div class="form-group">
+
+                                <input type="email" class="form-control" required="required" name="email"
+                                       placeholder="Email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+
+                                <input type="password" class="form-control" required="required" name="password"
+                                       placeholder="Password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+
+                                <input type="password" class="form-control" required="required" name="password_confirmation"
+                                       placeholder="Re type - Password">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Register</button>
                         </form><!-- /.contact-form -->
                     </div>
                 </div><!-- /.tr-home-slider -->

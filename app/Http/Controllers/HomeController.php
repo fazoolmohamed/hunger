@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Suggestion;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,8 +32,6 @@ class HomeController extends Controller
             ->join('users', 'users.id', '=', 'posts.user_id')
             ->select('posts.*', 'suggestions.*', 'users.*')
             ->get();
-
-//        return view('facebook')->with(['posts' => $posts]);
         return view('theme1')->with(['posts' => $posts]);
     }
 }
