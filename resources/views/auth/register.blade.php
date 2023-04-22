@@ -59,13 +59,13 @@
                                        placeholder="Password Confirmation" name="password_confirmation"/>
                             </div>
 
-                            <button class="btn btn-outline-primary btn-block" style="width: 100%" type="submit">Login
+                            <button class="btn btn-outline-primary btn-block" style="width: 100%" type="submit">Register
                             </button>
 
 
                             <div class="form-check d-flex justify-content-start mt-2">
-                                <label class="form-check-label" for="form1Example3">Dont have a account <a
-                                        href="{{route('register')}}">Register!</a></label>
+                                <label class="form-check-label" for="form1Example3">I have a account <a
+                                        href="{{route('login')}}">Login!</a></label>
                             </div>
                         </div>
                     </form>

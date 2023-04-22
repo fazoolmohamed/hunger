@@ -258,7 +258,8 @@
                     <div class="col-md-8">
                         <div class="section-title">
                             <h1><span><a href="#">Create Post</a></span></h1>
-                        </div>                        <div class="latest-result text-center">
+                        </div>
+                        <div class="latest-result text-center">
                             <div class="latest-result-content">
                                 <div class="row">
                                     <div style="width: 100%">
@@ -266,17 +267,9 @@
                                         </div>
                                         <form class="contact-form" name="contact-form" method="post" action="#">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" required="required"
-                                                       placeholder="Full Name">
-                                                <input type="text" class="form-control" required="required"
-                                                       placeholder="User NAme">
-                                                <input type="email" class="form-control" required="required"
-                                                       placeholder="Email Id">
-                                                <input type="password" class="form-control" required="required"
-                                                       placeholder="Password">
-                                                <input type="password" class="form-control" required="required"
-                                                       placeholder="Re type - Password">
-                                                <button type="submit" class="btn btn-primary">Register</button>
+                                                <textarea type="text" class="form-control"
+                                                          required="required"></textarea>
+                                                <button type="submit" class="btn btn-primary">Post</button>
                                             </div>
                                         </form><!-- /.contact-form -->
                                     </div>
