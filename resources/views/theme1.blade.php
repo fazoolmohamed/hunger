@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Mirrored from demo.themeregion.com/newshub/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Apr 2023 22:04:14 GMT -->
 <head>
     <meta charset="utf-8">
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Newshub | News & Blog HTML Template</title>
+    <title>The Hunger Eradication</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -265,10 +264,14 @@
                                     <div style="width: 100%">
                                         <div class="logo text-center">
                                         </div>
-                                        <form class="contact-form" name="contact-form" method="post" action="#">
+                                        <form action="{{route('store.post')}}" class="form_submission" method="post">
+                                            @csrf
                                             <div class="form-group">
-                                                <textarea type="text" class="form-control"
+                                                <textarea type="text" class="form-control" name="content"
                                                           required="required"></textarea>
+                                                <input type="hidden" name="longitude" value="">
+                                                <input type="hidden" name="latitude" value="">
+                                                <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
                                                 <button type="submit" class="btn btn-primary">Post</button>
                                             </div>
                                         </form><!-- /.contact-form -->
@@ -293,26 +296,15 @@
                                         <div class="post-content">
                                             <div class="entry-meta">
                                                 <ul>
-                                                    <li>By <a href="#">Jhon dun</a></li>
-                                                    <li>445 Share /<a href="#"> 1 Hour ago</a></li>
-                                                    <li>
-                                                        <ul>
-                                                            <li>Share</li>
-                                                            <li><a href="#"><i class="fa fa-facebook"
-                                                                               aria-hidden="true"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-twitter"
-                                                                               aria-hidden="true"></i></a>
-                                                            </li>
-                                                            <li><a href="#"><i class="fa fa-google-plus"
-                                                                               aria-hidden="true"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                                    <li>By <a href="#">{{Auth::user()->name}}</a></li>
                                                 </ul>
                                             </div><!-- /.entry-meta -->
                                             <h2 class="entry-title">
                                                 <a>{{$post->content}}</a>
+                                                @if(Auth::user()->type == 'admin')
+                                                    <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                                                @endif
+
                                             </h2>
                                         </div><!-- /.post-content -->
 
@@ -325,7 +317,7 @@
                                                 @endphp
                                                 @foreach($arrays as $key => $array)
                                                     @php
-                                                        $key = explode('0',$key);
+                                                        $keyzero = explode('0',$key);
                                                     @endphp
                                                     <div class="col-md-4">
                                                         <div style="text-align: center">
@@ -334,9 +326,9 @@
                                                                        data-post-id="{{$post->id}}"
                                                                        name="{{$array}}"
                                                                        value="{{$array}}"
-                                                                       {{$key[0] != '' ? 'checked' : ''}}
-                                                                       {{$key[0] != '' ? 'disabled' : ''}}
-                                                                       style="width:6rem;height: 6rem;{{$key[0] != '' ? 'accent-color: green;' : ''}}">
+                                                                       {{!empty($keyzero[0]) ? 'checked' : ''}}
+                                                                       {{!empty($keyzero[0]) ? 'disabled' : ''}}
+                                                                       style="width:6rem;height: 6rem;{{!empty($keyzero[0]) ? 'accent-color: green;' : ''}}">
                                                                 <p><b>{{$array}}</b></p>
                                                             </div>
                                                         </div>
@@ -1410,7 +1402,7 @@
         let this_ = $(this);
         let action = this_.attr('action');
         $.post(action, this_.serialize(), function (res) {
-            reload();
+            // reload();
         });
     });
 
@@ -1459,3 +1451,4 @@
 
 <!-- Mirrored from demo.themeregion.com/newshub/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Apr 2023 22:04:14 GMT -->
 </html>
+

@@ -122,7 +122,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">-</button>
                 Post Status
             </div>
-            <form action="{{route('store.post')}}" class="form_submission" method="post">
+                <form action="{{route('store.post')}}" class="form_submission" method="post">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

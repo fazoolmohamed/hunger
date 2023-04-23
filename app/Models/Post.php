@@ -12,6 +12,7 @@ class Post extends BaseModel
     protected $fillable = [
         "content",
         "food",
+        "user_id",
         "cloths",
         "latitude",
         "longitude",

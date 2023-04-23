@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Newshub | News & Blog HTML Template</title>
+    <title>The Hunger Eradication</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -158,7 +158,7 @@
                                        placeholder="Re type - Password">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
                         </form><!-- /.contact-form -->
                     </div>
                 </div><!-- /.tr-home-slider -->

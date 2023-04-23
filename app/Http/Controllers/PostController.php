@@ -27,6 +27,7 @@ class PostController extends Controller
     {
         $suggestion = new Suggestion();
         $suggestion->post_id = $id;
+        $suggestion->user_id = "['test':5]";
         $suggestion->save();
     }
 
