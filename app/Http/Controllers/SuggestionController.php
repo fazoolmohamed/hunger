@@ -10,6 +10,8 @@ class SuggestionController extends Controller
 {
     public function update(Request $request)
     {
+
+        print_r($request->all());die;
         $suggestion = Suggestion::findById($request->post_id);
         $user_ids = json_decode($suggestion->user_id);
 
@@ -24,11 +26,9 @@ class SuggestionController extends Controller
         $request->merge($arrays);
         $arr = [];
 
-        if (!empty($user_ids)) {
-            foreach ($user_ids as $key => $value) {
-                $arr += [$key => $value];
-                $arr += [$request->item => $request->user_id];
-            }
+        foreach ($user_ids as $key => $value) {
+            $arr += [$key => $value];
+            $arr += [$request->item => $request->user_id];
         }
 
         $suggestion->user_id = json_encode($arr);

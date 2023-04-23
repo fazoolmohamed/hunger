@@ -80,7 +80,14 @@
                                 <ul class="sub-menu text-left">
                                     <li><a href="#">My Profile</a></li>
                                     <li><a href="#">Settings</a></li>
-                                    <li><a href="#">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </ul>
                             </div>
                         </div>
@@ -323,9 +330,10 @@
                                                         <div style="text-align: center">
                                                             <div class="card-body">
                                                                 <input type="checkbox" class="checkbox_selection"
-                                                                       data-post-id="{{$post->id}}"
+                                                                       data-post-id="{{$post->post_id}}"
                                                                        name="{{$array}}"
                                                                        value="{{$array}}"
+                                                                       data-user-id="{{$array->user_id}}"
                                                                        {{!empty($keyzero[0]) ? 'checked' : ''}}
                                                                        {{!empty($keyzero[0]) ? 'disabled' : ''}}
                                                                        style="width:6rem;height: 6rem;{{!empty($keyzero[0]) ? 'accent-color: green;' : ''}}">
@@ -1429,14 +1437,12 @@
     }
 
     $(document).on('click', '.checkbox_selection', function () {
-
         let _this = $(this);
         _this.closest('.container-fluid').find('.card-body').find('input[type="checkbox"]').attr('disabled', 'disabled');
         _this.attr('disabled', false);
         let action = "{{route('suggestion.box')}}";
         let post_id = _this.attr('data-post-id');
-        let user_id = 1;
-        {{--        let user_id = "{{Auth::user()->id}}";--}}
+        let user_id = "{{Auth::user()->id}}";
         if (_this.is(':checked')) {
             _this.closest('.container-fluid').find('.card-body').find('input[type="checkbox"]').attr('disabled', 'disabled');
             _this.attr('disabled', false);

@@ -37,7 +37,9 @@ class PostController extends Controller
             ->join('suggestions', 'posts.id', '=', 'suggestions.post_id')
             ->join('users', 'users.id', '=', 'posts.user_id')
             ->select('posts.*', 'suggestions.*', 'users.*')
+            ->orderBy('id', 'DESC')
             ->get();
+
         return view('post')->with(['posts' => $posts]);
     }
 }
