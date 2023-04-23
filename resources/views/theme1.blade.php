@@ -78,8 +78,8 @@
                                         class="fa fa-caret-down"
                                         aria-hidden="true"></i></a>
                                 <ul class="sub-menu text-left">
-                                    <li><a href="#">My Profile</a></li>
-                                    <li><a href="#">Settings</a></li>
+{{--                                    <li><a href="#">My Profile</a></li>--}}
+{{--                                    <li><a href="#">Settings</a></li>--}}
                                     <li><a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -333,7 +333,6 @@
                                                                        data-post-id="{{$post->post_id}}"
                                                                        name="{{$array}}"
                                                                        value="{{$array}}"
-                                                                       data-user-id="{{$array->user_id}}"
                                                                        {{!empty($keyzero[0]) ? 'checked' : ''}}
                                                                        {{!empty($keyzero[0]) ? 'disabled' : ''}}
                                                                        style="width:6rem;height: 6rem;{{!empty($keyzero[0]) ? 'accent-color: green;' : ''}}">
