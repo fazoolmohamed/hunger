@@ -1,98 +1,28 @@
 <footer id="footer">
-    <div class="footer-menu">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Career</a></li>
-                <li><a href="#">Advertisement</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-widgets">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="widget widget-menu-2">
-                        <h2>Category</h2>
-                        <ul>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Politics</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">World</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Health</a></li>
-                            <li><a href="#">Entertainment</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="widget">
-                        <h2>Editions</h2>
-                        <ul>
-                            <li><a href="#">United States</a></li>
-                            <li><a href="#">China</a></li>
-                            <li><a href="#">India</a></li>
-                            <li><a href="#">Maxico</a></li>
-                            <li><a href="#">Middle East</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="widget widget-menu-3">
-                        <h2>Tag</h2>
-                        <ul>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Featured</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Entertainment</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Tech</a></li>
-                            <li><a href="#">Movies</a></li>
-                            <li><a href="#">Music</a></li>
-                            <li><a href="#">Packages</a></li>
-                            <li><a href="#">Amazon</a></li>
-                            <li><a href="#">Cars</a></li>
-                            <li><a href="#">Phones</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="widget">
-                        <h2>Products</h2>
-                        <ul>
-                            <li><a href="#">Ebooks</a></li>
-                            <li><a href="#">Newsfeeds</a></li>
-                            <li><a href="#">Reprints & Permissions</a></li>
-                            <li><a href="#">Magazine</a></li>
-                            <li><a href="#">College Guide</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- /.row -->
-        </div>
-    </div>
+
     <div class="footer-bottom text-center">
         <div class="container">
             <div class="footer-bottom-content">
                 <div class="footer-logo">
-                    <a href="index-2.html"><img class="img-fluid" src="{{asset('assets/images/footer-logo.png')}}"
-                                                alt="Logo"></a>
+                    <a class="navbar-brand dark">
+                        <h3>The Hunger Eradication</h3>
+                    </a>
+
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi
+                    ut
                     aliquip ex ea commodo consequat.</p>
                 <address>
-                    <p>&copy; 2017 <a href="index-2.html">Newshub</a>. Email: <a href="#"><span class="__cf_email__"
-                                                                                                data-cfemail="6f060109002f010a181c071a0d410c0002">[email&#160;protected]</span></a>
-                        | News: <a href="#">news.newshub.com</a> | Advertising: <a href="#">ad.newshub.com</a> <br>Phone:
-                        + 1234 8812345, 880112345 + 1359, 6356 + 112-11-9874</p>
+                    <p>&copy; 2017 <a href="index-2.html">Newshub</a>. Email: <a href="#"><span
+                                class="__cf_email__"
+                                data-cfemail="6f060109002f010a181c071a0d410c0002">[email&#160;protected]</span></a>
+                        | News: <a href="#">news.newshub.com</a> | Advertising: <a href="#">ad.newshub.com</a>
+                        <br>Phone:
+                        + 1234 8812345, 880112345 + 1359, 6356 + 112-11-9874
+                    </p>
                 </address>
             </div><!-- /.footer-bottom-content -->
         </div><!-- /.container -->
