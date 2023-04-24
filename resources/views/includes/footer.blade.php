@@ -153,6 +153,19 @@
             location.reload()
         })
     })
+
+    $(document).on('click', '.dropdown_checkbox', function () {
+        let _this = $(this);
+        console.log(_this.attr('data-toggle'));
+        let x = _this.closest(".tr-post").find(".checkbox-open");
+        if (_this.attr('data-toggle') == 1) {
+            x.css('display', 'block');
+            _this.attr('data-toggle', 0);
+        } else {
+            x.css('display', 'none');
+            _this.attr('data-toggle', 1);
+        }
+    })
 </script>
 
 </body>

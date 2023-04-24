@@ -213,7 +213,7 @@
                 </div><!-- /.tr-home-slider -->
 
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="section-title">
                             <h1><span><a href="#">Create Post</a></span></h1>
                         </div>
@@ -269,8 +269,10 @@
 
                                             </h2>
                                         </div><!-- /.post-content -->
-
-                                        <div class="container-fluid" style="margin-top: 10px">
+                                        <div class="dropdown_checkbox" data-toggle="1">
+                                            <i class='fa fa-location-arrow' style='font-size:24px'></i>
+                                        </div>
+                                        <div class="container-fluid checkbox-open" style="margin-top: 10px; display: none">
                                             <div class="row"
                                                  style="border: 1px solid #555555; margin: 0 80px; border-radius: 5px">
                                                 @php
