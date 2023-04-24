@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Post;
 use App\Models\Suggestion;
 use App\Models\User;
@@ -32,6 +33,11 @@ class HomeController extends Controller
             ->select('posts.*', 'suggestions.*')
             ->orderBy('post_id', 'DESC')
             ->get();
-        return view('theme1')->with(['posts' => $posts]);
+
+        $newses = DB::table('news')
+            ->join('users', 'news.user_id', '=', 'users.id')
+            ->orderBy('news.id', 'DESC')
+            ->get();
+        return view('theme1')->with(['posts' => $posts, 'newses' => $newses]);
     }
 }

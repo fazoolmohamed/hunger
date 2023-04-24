@@ -272,7 +272,8 @@
                                         <div class="dropdown_checkbox" data-toggle="1">
                                             <i class='fa fa-location-arrow' style='font-size:24px'></i>
                                         </div>
-                                        <div class="container-fluid checkbox-open" style="margin-top: 10px; display: none">
+                                        <div class="container-fluid checkbox-open"
+                                             style="margin-top: 10px; display: none">
                                             <div class="row"
                                                  style="border: 1px solid #555555; margin: 0 80px; border-radius: 5px">
                                                 @php
@@ -303,91 +304,29 @@
                                     </div><!-- tr-post -->
                                 @endforeach
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="tr-post medium-post">
-                                            <div id="carousel-one" class="carousel slide" data-ride="carousel">
-                                                <div class="carousel-inner" role="listbox">
-                                                    <div class="item carousel-item active">
-                                                        <div class="entry-header">
-                                                            <div class="entry-thumbnail">
-                                                                <a href="details.html"><img class="img-fluid"
-                                                                                            src="{{asset('assets/images/post/2.jpg')}}"
-                                                                                            alt="Image"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- /.item -->
-                                                    <div class="item carousel-item">
-                                                        <div class="entry-header">
-                                                            <div class="entry-thumbnail">
-                                                                <a href="details.html"><img class="img-fluid"
-                                                                                            src="{{asset('assets/images/post/3.jpg')}}"
-                                                                                            alt="Image"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- /.item -->
-                                                    <div class="item carousel-item">
-                                                        <div class="entry-header">
-                                                            <div class="entry-thumbnail">
-                                                                <a href="details.html"><img class="img-fluid"
-                                                                                            src="{{asset('assets/images/post/5.jpg')}}"
-                                                                                            alt="Image"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- /.item -->
-
-                                                </div><!-- /.carousel-inner -->
-                                                <div class="gallery-turner">
-                                                    <a class="left-photo" href="#carousel-one" role="button"
-                                                       data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                                                    <a class="right-photo" href="#carousel-one" role="button"
-                                                       data-slide="next"><i class="fa fa-angle-right"></i></a>
+                                    @foreach($newses as $news)
+                                        <div class="col-md-6 medium-post">
+                                            <div class="tr-post">
+                                                <div class="entry-header">
+                                                    <div class="entry-thumbnail">
+                                                        <a href="#"><img class="img-fluid"
+                                                                         src="{{asset('assets/news')}}/{{$news->image}}"
+                                                                         alt="Image"></a>
+                                                    </div>
                                                 </div>
-                                            </div><!-- /#carousel-one -->
-                                            <div class="post-content">
-                                                <div class="author">
-                                                    <a href="#"><img class="img-fluid img-circle"
-                                                                     src="{{asset('assets/images/others/author2.png')}}"
-                                                                     alt="Image"></a>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li>By <a href="#"> Matt Cloey</a></li>
-                                                        <li>243 Share /<a href="#"> 4 Hour ago</a></li>
-                                                    </ul>
-                                                </div><!-- /.entry-meta -->
-                                                <h2 class="entry-title">
-                                                    <a href="#">Martha Stewart, Snoop Dogg and Anna Kendrick</a>
-                                                </h2>
-                                            </div><!-- /.post-content -->
-                                        </div><!-- tr-post -->
-                                    </div>
-                                    <div class="col-md-6 medium-post">
-                                        <div class="tr-post">
-                                            <div class="entry-header">
-                                                <div class="entry-thumbnail">
-                                                    <a href="#"><img class="img-fluid"
-                                                                     src="{{asset('assets/images/post/3.jpg')}}"
-                                                                     alt="Image"></a>
-                                                </div>
-                                            </div>
-                                            <div class="post-content">
-                                                <div class="author">
-                                                    <a href="#"><img class="img-fluid img-circle"
-                                                                     src="{{asset('assets/images/others/author3.png')}}"
-                                                                     alt="Image"></a>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li>By <a href="#">Adam Hianks</a></li>
-                                                        <li>300 Share /<a href="#"> 2 Hour ago</a></li>
-                                                    </ul>
-                                                </div><!-- /.entry-meta -->
-                                                <h2 class="entry-title">
-                                                    <a href="#">Chelsea Handler slams Angelina yet again</a>
-                                                </h2>
-                                            </div><!-- /.post-content -->
-                                        </div><!-- tr-post -->
-                                    </div>
+                                                <div class="post-content">
+                                                    <div class="entry-meta">
+                                                        <ul>
+                                                            <li>By <a href="#">{{$news->name}}</a></li>
+                                                        </ul>
+                                                    </div><!-- /.entry-meta -->
+                                                    <h2 class="entry-title">
+                                                        <a href="#">{{$news->news}}</a>
+                                                    </h2>
+                                                </div><!-- /.post-content -->
+                                            </div><!-- tr-post -->
+                                        </div>
+                                    @endforeach
                                 </div><!-- /.row -->
                             </div><!-- /.business-section -->
                         </div><!-- /.tr-content -->
