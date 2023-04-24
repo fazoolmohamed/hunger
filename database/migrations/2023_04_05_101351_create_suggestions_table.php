@@ -16,9 +16,9 @@ return new class extends Migration {
             $table->id();
             $table->string('user_id')->nullable();
             $table->string('post_id');
-            $table->string('item1')->default(0);
-            $table->string('item2')->default(0);
-            $table->string('item3')->default(0);
+            $table->string('Clothes')->default(0);
+            $table->string('Shelter')->default(0);
+            $table->string('Other')->default(0);
             $table->timestamps();
         });
     }

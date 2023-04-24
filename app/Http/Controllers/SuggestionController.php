@@ -14,7 +14,7 @@ class SuggestionController extends Controller
 
         $user_ids = json_decode($suggestion->user_id);
 
-        $arrays = ['item1' => $suggestion->item1, 'item2' => $suggestion->item2, 'item3' => $suggestion->item3];
+        $arrays = ['Clothes' => $suggestion->Clothes, 'Shelter' => $suggestion->Shelter, 'Other' => $suggestion->Other];
 
         $num = 1;
         foreach ($arrays as $array) {
@@ -31,9 +31,9 @@ class SuggestionController extends Controller
         }
 
         $suggestion->user_id = json_encode($arr);
-        $suggestion->item1 = $request->item1;
-        $suggestion->item2 = $request->item2;
-        $suggestion->item3 = $request->item3;
+        $suggestion->Clothes = $request->Clothes;
+        $suggestion->Shelter = $request->Shelter;
+        $suggestion->Other = $request->Other;
         $suggestion->save();
     }
 }

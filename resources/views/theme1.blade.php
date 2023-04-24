@@ -277,7 +277,7 @@
                                             <div class="row"
                                                  style="border: 1px solid #555555; margin: 0 80px; border-radius: 5px">
                                                 @php
-                                                    $arrays = [$post->item1.'1' => 'item1', $post->item2.'2' => 'item2', $post->item3.'3' => 'item3'];
+                                                    $arrays = [$post->Clothes.'1' => 'Clothes', $post->Shelter.'2' => 'Shelter', $post->Other.'3' => 'Other'];
                                                     uksort($arrays, 'strcasecmp');
                                                 @endphp
                                                 @foreach($arrays as $key => $array)
