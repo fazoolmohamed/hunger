@@ -16,13 +16,7 @@
                     ut
                     aliquip ex ea commodo consequat.</p>
                 <address>
-                    <p>&copy; 2017 <a href="index-2.html">Newshub</a>. Email: <a href="#"><span
-                                class="__cf_email__"
-                                data-cfemail="6f060109002f010a181c071a0d410c0002">[email&#160;protected]</span></a>
-                        | News: <a href="#">news.newshub.com</a> | Advertising: <a href="#">ad.newshub.com</a>
-                        <br>Phone:
-                        + 1234 8812345, 880112345 + 1359, 6356 + 112-11-9874
-                    </p>
+                    <p>&copy; 2022 Hunger Eradication || Development by Faheem Niyas 2211338 </p>
                 </address>
             </div><!-- /.footer-bottom-content -->
         </div><!-- /.container -->

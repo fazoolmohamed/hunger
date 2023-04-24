@@ -52,23 +52,7 @@
         <div class="row">
             @include('includes/site_bar')
             <div class="col-lg-9">
-                <div class="tr-topbar clearfix">
-                    <div class="topbar-left">
-                        <div class="breaking-news">
-                            <span># Newsfeed</span>
-                            <div id="ticker">
-                                <ul>
-                                    <li><a href="#">Remarkable Women - character design project</a></li>
-                                    <li><a href="#">Remarkable Women - character design project</a></li>
-                                    <li><a href="#">Remarkable Women - character design project</a></li>
-                                    <li><a href="#">Remarkable Women - character design project</a></li>
-                                </ul>
-                            </div>
-                        </div><!-- breaking-news -->
-                    </div><!-- /.topbar-left -->
-                    @include('includes/header')
-                </div><!-- /.tr-topbar -->
-
+                @include('includes/navigation')
                 <div class="tr-home-slider home-slider-1 tr-section">
                     <div id="home-carousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
