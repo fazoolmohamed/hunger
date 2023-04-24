@@ -20,10 +20,10 @@
                                 <i class="fa fa-futbol-o" aria-hidden="true"></i>
                                 News Update</a>
                         </li>
-                        <li><a data-toggle="dropdown" href="">
-                                <i class="fa-google-wallet" aria-hidden="true"></i>
-                                Organization</a>
-                        </li>
+{{--                        <li><a data-toggle="dropdown" href="">--}}
+{{--                                <i class="fa-google-wallet" aria-hidden="true"></i>--}}
+{{--                                Organization</a>--}}
+{{--                        </li>--}}
                         @if(Auth::user()->type == 'admin')
                             <li><a data-toggle="dropdown" href="{{route('create.user')}}"><i
                                         class="fa fa-plus-circle" aria-hidden="true"></i>Create User</a>
