@@ -10,8 +10,7 @@
     <meta name="description" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Newshub | News & Blog HTML Template</title>
-
+    <title>The Hunger Eradication</title>
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
