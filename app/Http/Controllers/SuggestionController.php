@@ -11,6 +11,7 @@ class SuggestionController extends Controller
     public function update(Request $request)
     {
         $suggestion = Suggestion::findById($request->post_id);
+
         $user_ids = json_decode($suggestion->user_id);
 
         $arrays = ['item1' => $suggestion->item1, 'item2' => $suggestion->item2, 'item3' => $suggestion->item3];
