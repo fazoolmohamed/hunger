@@ -131,7 +131,7 @@
 
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-primary">post News</button>
                         </form><!-- /.contact-form -->
                     </div>
                 </div><!-- /.tr-home-slider -->
