@@ -118,11 +118,12 @@
                                                                              src="{{asset('assets/images/logo.png')}}"
                                                                              alt="Logo"></a>
                         </div>
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('store.user') }}">
                             @csrf
                             <div class="form-group">
 
-                                <input type="text" class="form-control" required="required" name="name" placeholder="User Name">
+                                <input type="text" class="form-control  @error('name') is-invalid @enderror" required="required" name="name"
+                                       placeholder="User Name">
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -132,7 +133,7 @@
                             </div>
                             <div class="form-group">
 
-                                <input type="email" class="form-control" required="required" name="email"
+                                <input type="email" class="form-control  @error('email') is-invalid @enderror" required="required" name="email"
                                        placeholder="Email">
 
                                 @error('email')
@@ -143,8 +144,10 @@
                             </div>
                             <div class="form-group">
 
-                                <input type="password" class="form-control" required="required" name="password"
+                                <input type="password" class="form-control  @error('password') is-invalid @enderror" required="required" name="password"
                                        placeholder="Password">
+
+                                <input type="hidden" class="form-control" name="type" value="user">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -154,7 +157,8 @@
                             </div>
                             <div class="form-group">
 
-                                <input type="password" class="form-control" required="required" name="password_confirmation"
+                                <input type="password" class="form-control" required="required"
+                                       name="password_confirmation"
                                        placeholder="Re type - Password">
                             </div>
 

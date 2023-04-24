@@ -10,8 +10,6 @@ class SuggestionController extends Controller
 {
     public function update(Request $request)
     {
-
-        print_r($request->all());die;
         $suggestion = Suggestion::findById($request->post_id);
         $user_ids = json_decode($suggestion->user_id);
 

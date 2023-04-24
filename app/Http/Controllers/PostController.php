@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store(Request $request)
     {
         $post = new Post();
@@ -35,11 +41,15 @@ class PostController extends Controller
     {
         $posts = DB::table('posts')
             ->join('suggestions', 'posts.id', '=', 'suggestions.post_id')
-            ->join('users', 'users.id', '=', 'posts.user_id')
-            ->select('posts.*', 'suggestions.*', 'users.*')
-            ->orderBy('id', 'DESC')
+            ->select('posts.*', 'suggestions.*')
+            ->orderBy('post_id', 'DESC')
             ->get();
-
         return view('post')->with(['posts' => $posts]);
+    }
+
+    public function delete(Request $request)
+    {
+        print_r($request->all());
+        DB::table($request->model)->where(['id' => $request->id])->delete();
     }
 }

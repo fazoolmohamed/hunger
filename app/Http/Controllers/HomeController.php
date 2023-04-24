@@ -29,8 +29,8 @@ class HomeController extends Controller
     {
         $posts = DB::table('posts')
             ->join('suggestions', 'posts.id', '=', 'suggestions.post_id')
-            ->join('users', 'users.id', '=', 'posts.user_id')
-            ->select('posts.*', 'suggestions.*', 'users.*')
+            ->select('posts.*', 'suggestions.*')
+            ->orderBy('post_id', 'DESC')
             ->get();
         return view('theme1')->with(['posts' => $posts]);
     }

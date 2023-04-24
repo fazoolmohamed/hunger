@@ -19,7 +19,7 @@
 
                             <div class="form-outline mb-4">
                                 <input type="name" id="typeEmailX-2"
-                                       class="form-control form-control text-center form-control @error('name') is-invalid @enderror"
+                                       class="form-control text-center form-control @error('name') is-invalid @enderror"
                                        placeholder="Name" autocomplete="off" name="name"/>
 
                                 @error('name')
@@ -31,7 +31,7 @@
 
                             <div class="form-outline mb-4">
                                 <input type="email" id="typeEmailX-2"
-                                       class="form-control form-control text-center form-control @error('email') is-invalid @enderror"
+                                       class="form-control text-center form-control @error('email') is-invalid @enderror"
                                        placeholder="Email" autocomplete="off" name="email"/>
 
                                 @error('email')
@@ -43,7 +43,7 @@
 
                             <div class="form-outline mb-4">
                                 <input type="password" id="typePasswordX-2"
-                                       class="form-control form-control text-center @error('password') is-invalid @enderror"
+                                       class="form-control text-center @error('password') is-invalid @enderror"
                                        placeholder="Password" name="password"/>
 
                                 @error('password')
@@ -55,7 +55,7 @@
 
                             <div class="form-outline mb-4">
                                 <input type="password" id="typePasswordX-2"
-                                       class="form-control form-control text-center"
+                                       class="form-control text-center"
                                        placeholder="Password Confirmation" name="password_confirmation"/>
                             </div>
 
